@@ -1,4 +1,4 @@
-import React, { useContext, Fragment, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import projectContext from '../../context/projects/projectContext';
 import { IconButton } from '@material-ui/core';
@@ -14,7 +14,7 @@ const Toastmsg = () => {
 
     useEffect(() => {
         if(open){
-            const toastTime = setTimeout(() => {
+            setTimeout(() => {
                 showToastFn({ ...showToast, open: false, msg: 'alert msg' });
             }, 4000);
         }

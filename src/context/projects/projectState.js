@@ -100,7 +100,6 @@ const ProjectState = props => {
                 getProjectsFn,
                 addProyectFn,
                 showToastFn,
-                addProyectFn,
                 setCurrentProjectFn
             }}
         >

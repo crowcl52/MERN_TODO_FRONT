@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -8,21 +8,15 @@ import Typography from '@material-ui/core/Typography';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import PauseIcon from '@material-ui/icons/Pause';
-import SkipNextIcon from '@material-ui/icons/SkipNext';
 import { Grid, Chip, Tooltip } from '@material-ui/core';
 import TaskTimer from './TaskTimer';
 import taskContext from '../../context/task/taskContext';
-
-var timeInterval = null;
 
 const CurrentTask = ({ task }) => {
 
     // traer context
     const tasksContext = useContext(taskContext);
     const { playIntervalFn, editTaskFn, playInterval } = tasksContext;
-
-    // calcualte progress time
-    const [progress, setProgress] = useState(100);
 
     let { duration, remain } = task;
 
@@ -56,7 +50,6 @@ const CurrentTask = ({ task }) => {
         },
     }));
     const classes = useStyles();
-    const theme = useTheme();
 
     const completeTask = () => {
         editTaskFn({ ...task, status: true })

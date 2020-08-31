@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Fab, Container, Grid, ButtonGroup, Button } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import TaskList from './TaskList';

@@ -1,4 +1,4 @@
-import React, { useContext, Fragment, useEffect } from 'react';
+import React, { useContext, Fragment } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
@@ -54,7 +54,6 @@ const TaskList = ({ task }) => {
     }));
 
     const classes = useStyles();
-    const theme = useTheme();
 
     if (tasks.length === 0) return (<h3 className="task-muted-txt"> This project has no active tasks create one  </h3>)
 
@@ -94,6 +93,11 @@ const TaskList = ({ task }) => {
                                 <Tooltip title="Set current task" aria-label="add">
                                     <IconButton onClick={() => setInprogressTaskFn(task)} aria-label="play/pause">
                                         <PlayArrowIcon />
+                                    </IconButton>
+                                </Tooltip>
+                                <Tooltip title="Complete task" aria-label="add">
+                                    <IconButton onClick={() => completeTask(task)} aria-label="next">
+                                        <DoneIcon />
                                     </IconButton>
                                 </Tooltip>
                                 <Tooltip title="Complete task" aria-label="add">
