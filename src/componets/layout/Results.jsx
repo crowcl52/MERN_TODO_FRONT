@@ -34,15 +34,15 @@ const Results = () => {
         let days = [];
         let newData = []
         for (let index = 0; index < 7; index++) {
-            let day = moment(weakDate).add(index+1, 'days').format('DD/MM');
+            let day = moment(weakDate).add(index + 1, 'days').format('DD/MM');
             days[index] = day;
             console.log(completeTask)
             if (completeTask.length > 0) {
                 console.log(day);
                 console.log((moment(completeTask[0].completeAt).format('DD/MM')));
-                let count = completeTask.filter( t =>  (moment(t.completeAt).format('DD/MM')) == day  )
+                let count = completeTask.filter(t => (moment(t.completeAt).format('DD/MM')) == day)
                 console.log(count)
-                newData[index] = { day: index+1, complete: count.length }
+                newData[index] = { day: index + 1, complete: count.length }
             }
         }
         setdaysInWeak(days)
@@ -59,9 +59,9 @@ const Results = () => {
     return (
         <div className="full" >
             <HeaderTask />
+            <h1 className="muted-txt" > Projects from  {weakDate} to {moment().format('MM/D/YYYY')} </h1>
 
-            <div className="chart-container">
-                <h1 className="muted-txt" > Projects from  {weakDate} to {moment().format('MM/D/YYYY')} </h1>
+            <div className="chart-container mt">
                 <VictoryChart
                     // adding the material theme provided with Victory
                     theme={VictoryTheme.material}

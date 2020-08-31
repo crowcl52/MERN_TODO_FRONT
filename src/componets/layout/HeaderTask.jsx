@@ -81,6 +81,7 @@ const HeaderTask = () => {
                     onClose={handleClose}
                 >
                     <MenuItem onClick={handleClose}> <Link className="link" to={'/projects'} ><BusinessCenterIcon />   Projects </Link>  </MenuItem>
+                    <MenuItem onClick={handleClose}> <Link className="link" to={'/task'} ><BusinessCenterIcon />   Tasks </Link>  </MenuItem>
                     <MenuItem onClick={handleClose}> <Link className="link" to={'/history'} ><TimelineIcon />  History </Link> </MenuItem>
                     <MenuItem onClick={handleClose}> <Link className="link" to={'/charts'} ><PieChartIcon />  Charts </Link> </MenuItem>
                     <MenuItem onClick={()=>logOutFn()}> <span className="link" > <ExitToAppIcon /> Logout </span> </MenuItem>
