@@ -66,6 +66,7 @@ const Results = () => {
                     // adding the material theme provided with Victory
                     theme={VictoryTheme.material}
                     domainPadding={10}
+                    height={200}
                 >
                     <VictoryAxis
                         tickValues={[1, 2, 3, 4, 5, 6, 7]}
